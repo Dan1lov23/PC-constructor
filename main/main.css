@@ -1,0 +1,23 @@
+.corps, .processors {
+    font-family: sans-serif;
+    display: grid;
+    grid-template-columns: 400px 400px 400px 400px;
+}
+
+.processors {
+    margin-top: 45px;
+}
+
+.choice {
+    img {
+        width: 225px;
+        height: 225px;
+    }
+}
+
+.result {
+    img {
+        width: 225px;
+        height: 225px;
+    }
+}
