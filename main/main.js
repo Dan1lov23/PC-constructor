@@ -1,5 +1,7 @@
 let finalAssembly = "";
 
+let sum = 0;
+
 let allImage = [
     "",
     "https://thg.ru/wp-content/uploads/images/howto/images/case_march_2022_01.jpg",
@@ -13,15 +15,30 @@ let allImage = [
 ];
 
 let allArray = [
+    // путсая строка как 0 эллемент
     "",
+    // корпуса
     "Cooler Master HAF 700 Evo",
     "Fractal Design Define 7",
     "Lian Li Lancool II Mesh",
     "Fractal Design Meshify 2",
+    // процессоры
     "Intel Core i7-14700K OEM",
     "AMD Ryzen 5 7600X OEM",
     "Intel Core i9-14900K OEM",
     "AMD Ryzen 7 7800X3D OEM"
+];
+
+let allArrayPrice = [
+    0,
+    68075,
+    7222,
+    11199,
+    23399,
+    45499,
+    22599,
+    51499,
+    54449
 ];
 
 function corpCheck(string) {
@@ -36,25 +53,29 @@ function procCheck(string) {
 
 let assemblyCorp = "";
 let assemblyProc = "";
+let corpPrice = 0;
+let procPrice = [];
 
 function main() {
     const buttons = document.getElementsByTagName("button");
 
     Array.from(buttons).forEach(button => {
         button.addEventListener('click', function() {
-            // Удаляем предыдущие значения
             if (corpCheck(allArray[this.id])) {
+                corpPrice = allArrayPrice[this.id];
                 assemblyCorp = allArray[this.id] + ", ";
                 document.getElementById('corp').innerHTML = `<img src="${allImage[this.id]}"/>`;
             } else if (procCheck(allArray[this.id])) {
+                procPrice = allArrayPrice[this.id];
                 assemblyProc = allArray[this.id] + ", ";
                 document.getElementById('proc').innerHTML = `<img src="${allImage[this.id]}"/>`;
             }
             finalAssembly = assemblyCorp + assemblyProc;
-
+            sum = corpPrice + procPrice;
             document.getElementById('allComponents').innerHTML = finalAssembly;
-            console.log(assemblyCorp, assemblyProc, this.id);
+            console.log(assemblyCorp, assemblyProc, this.id, corpPrice, procPrice);
             console.log("Финальная сборка - ", finalAssembly);
+            console.log("Сумма сборки - ", sum);
         });
     });
 }
