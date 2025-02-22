@@ -1,5 +1,8 @@
-.corps, .processors {
+body {
     font-family: sans-serif;
+}
+
+.corps, .processors {
     display: grid;
     grid-template-columns: 400px 400px 400px 400px;
 }
@@ -9,15 +12,38 @@
 }
 
 .choice {
+    h1 {
+        font-size: 15px;
+    }
     img {
+        border: black solid 3px;
+        border-radius: 15px;
+        width: 225px;
+        height: 225px;
+    }
+    button {
+        margin-left: 12px;
+    }
+}
+
+.resultTitle {
+    text-align: center;
+    font-size: 35px;
+}
+
+
+.result {
+    display: grid;
+    grid-template-columns: 400px 400px;
+    img {
+        border: black solid 3px;
+        border-radius: 15px;
         width: 225px;
         height: 225px;
     }
 }
 
-.result {
-    img {
-        width: 225px;
-        height: 225px;
-    }
+.resultCorp, .resultProc {
+    text-align: center;
 }
+
