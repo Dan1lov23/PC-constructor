@@ -80,4 +80,8 @@ function main() {
     });
 }
 
+function themeChange() {
+
+}
+
 main();
