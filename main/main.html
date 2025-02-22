@@ -5,8 +5,18 @@
     <title>PC constructor</title>
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/76/76658.png">
 </head>
 <body>
+    <div class="themeChange">
+        <button class="themeChangeButton" onclick="themeChange()"><i class="fa-solid fa-moon"></i></button>
+    </div>
+    <div class="mainTitle">
+        <h1>ПК конструктор</h1>
+    </div>
+    <div class="defTitle">
+        <h1>Корпуса</h1>
+    </div>
     <div class="corps">
         <div class="choice">
             <img src="../corps img/case_march_2022_01.jpg" alt=""/>
@@ -17,13 +27,16 @@
             <h1>Fractal Design Define 7<button id="2"><i class="fa-solid fa-square-check"></i></button></h1>
         </div>
         <div class="choice">
-            <img src="../corps img/case_august_2020_01.jpg" alt=""/>
+            <img src="https://thg.ru/wp-content/uploads/images/howto/images/case_august_2020_01.jpg" alt=""/>
             <h1>Lian Li Lancool II Mesh"<button id="3"><i class="fa-solid fa-square-check"></i></button></h1>
         </div>
         <div class="choice">
-            <img src="../corps img/case_december_2020_01.jpg" alt=""/>
+            <img src="https://thg.ru/wp-content/uploads/images/howto/images/case_december_2020_01.jpg" alt=""/>
             <h1>Fractal Design Meshify 2<button id="4"><i class="fa-solid fa-square-check"></i></button></h1>
         </div>
+    </div>
+    <div class="defTitle">
+        <h1>Процессоры</h1>
     </div>
     <div class="processors">
         <div class="choice">
@@ -47,13 +60,25 @@
         <h1>Ваша сборка</h1>
     </div>
     <div class="result">
-        <div class="resultCorp">
+        <div class="resultComponent">
             <h1>корпус</h1>
-            <div id="corp"><img src="https://avatanplus.com/files/resources/original/5759b69c2046c155367151e4.png"/></div>
+            <div id="corp"><i class="fa-solid fa-question"></i></div>
         </div>
-        <div class="resultProc">
+        <div class="resultComponent">
             <h1>процессор</h1>
-            <div id="proc"><img src="https://avatanplus.com/files/resources/original/5759b69c2046c155367151e4.png"/></div>
+            <div id="proc"><i class="fa-solid fa-question"></i></div>
+        </div>
+        <div class="resultComponent">
+            <h1>видеокарта</h1>
+            <div id="cart"><i class="fa-solid fa-question"></i></div>
+        </div>
+        <div class="resultComponent">
+            <h1>SSD</h1>
+            <div id="ssd"><i class="fa-solid fa-question"></i></div>
+        </div>
+        <div class="resultComponent">
+            <h1>HDD</h1>
+            <div id="hdd"><i class="fa-solid fa-question"></i></div>
         </div>
         <div id="allComponents"></div>
     </div>
