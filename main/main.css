@@ -13,7 +13,33 @@ body {
     margin: 20px 0;
 }
 
-.corps, .processors, .videoCarts {
+.youMoney {
+    text-align: center;
+    input {
+        width: 200px;
+        height: 30px;
+        border: #555555 2px solid;
+        border-radius: 15px;
+    }
+    button {
+        width: 40px;
+        height: 40px;
+        margin-left: 12px;
+        border: 2px solid #007bff;
+        border-radius: 50%;
+        background-color: white;
+        padding: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+    }
+    button:hover {
+        transform: scale(1.1);
+        background-color: #007bff;
+        color: white;
+    }
+}
+
+.corps, .processors, .videoCarts, .SSD, .HDD {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
@@ -105,4 +131,10 @@ body {
 .themeChangeButton:hover {
     transform: scale(1.1);
     background-color: #f0f0f0;
+}
+
+.priceResult {
+    text-align: center;
+    font-size: 35px;
+    color: #007bff;
 }
