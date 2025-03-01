@@ -33,6 +33,11 @@ let allImage = [
     "https://c.dns-shop.ru/thumb/st1/fit/500/500/0900bc63e68675f3ebd81fd05ff58b63/6965b294e73721abbf895a5a206ac8e915b83b1e36de6055350a7bba1940c0ed.png.webp",
     "https://c.dns-shop.ru/thumb/st1/fit/500/500/ef5eb4cc55c042ac2bd38475d9ed5cff/3c5cf998abdef6030cc75c826a41acc5ba77dcc852a67a9b1b9b37668402099d.jpg.webp",
     "https://c.dns-shop.ru/thumb/st4/fit/500/500/9d3040c6f1141047c3e435ed4018f3ef/625d41939f718f967ea6aff7f8156ebaaca050f9fcf9d5f72b15253345316042.png.webp",
+
+    "https://thg.ru/wp-content/uploads/images/howto/images/best_psu_may_2020_01.jpg",
+    "https://thg.ru/wp-content/uploads/images/howto/images/best_psu_november_2022_01.jpg",
+    "https://thg.ru/wp-content/uploads/images/howto/images/best_psu_march_2021_01.jpg",
+    "https://thg.ru/wp-content/uploads/images/howto/images/best_psu_january_2023_01.jpg",
 ];
 
 let allArray = [
@@ -67,7 +72,12 @@ let allArray = [
     "GIGABYTE B650E AORUS MASTER",
     "ASRock X670E Taichi",
     "ASUS ROG Strix B550-F",
-    "GIGABYTE Z790 AORUS XTREME"
+    "GIGABYTE Z790 AORUS XTREME",
+    // блоки питания
+    "Bitfenix BF450G",
+    "EVGA SuperNOVA 850 G7",
+    "XPG Core Reactor 650W",
+    "MSI MEG Ai1000P PCIe 5",
 ];
 
 let allArrayPrice = [
@@ -96,7 +106,17 @@ let allArrayPrice = [
     5000,
     3700,
     6000,
-    4900
+    4900,
+
+    10000,
+    12000,
+    23400,
+    15000,
+
+    3400,
+    5000,
+    6400,
+    16000,
 ];
 
 function corpCheck(string) {
@@ -129,12 +149,19 @@ function platCheck(string) {
     return platCheckArray.includes(string);
 }
 
+function blockCheck(string) {
+    let blockCheck = [ "Bitfenix BF450G", "EVGA SuperNOVA 850 G7", "XPG Core Reactor 650W", "MSI MEG Ai1000P PCIe 5"];
+    return blockCheck.includes(string);
+
+}
+
 let assemblyCorp = "";
 let assemblyProc = "";
 let assemblyCart = "";
 let assemblySSD = "";
 let assemblyHDD = "";
 let assemblyPlat = "";
+let assemblyBlock = "";
 
 let corpPrice = 0;
 let procPrice = 0;
@@ -142,6 +169,7 @@ let cartPrice = 0;
 let ssdPrice = 0;
 let hddPrice = 0;
 let platPrice = 0;
+let blockPrice = 0;
 
 
 function main() {
@@ -173,12 +201,16 @@ function main() {
                 platPrice = allArrayPrice[this.id];
                 assemblyCart = allArray[this.id] + ", ";
                 document.getElementById('plat').innerHTML = `<img src="${allImage[this.id]}"/>`;
+            } else if (blockCheck(allArray[this.id])) {
+                platPrice = allArrayPrice[this.id];
+                assemblyBlock = allArray[this.id] + ", ";
+                document.getElementById('block').innerHTML = `<img src="${allImage[this.id]}"/>`;
             }
             finalAssembly = assemblyCorp + assemblyProc + assemblyCart + assemblySSD + assemblyHDD + assemblyPlat;
             sum = corpPrice + procPrice + cartPrice + ssdPrice + hddPrice + platPrice;
             document.getElementById('allComponents').innerHTML = finalAssembly;
             document.getElementById('allPrice').innerHTML = `${sum}₽`;
-            console.log(assemblyCorp, assemblyProc, this.id, corpPrice, procPrice, cartPrice);
+            console.log(assemblyCorp, assemblyProc, corpPrice, procPrice, cartPrice, ssdPrice, hddPrice, platPrice);
             console.log("Финальная сборка - ", finalAssembly);
             money();
         });
