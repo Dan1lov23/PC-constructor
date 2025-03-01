@@ -202,13 +202,14 @@ function main() {
                 assemblyCart = allArray[this.id] + ", ";
                 document.getElementById('plat').innerHTML = `<img src="${allImage[this.id]}"/>`;
             } else if (blockCheck(allArray[this.id])) {
-                platPrice = allArrayPrice[this.id];
+                blockPrice = allArrayPrice[this.id];
                 assemblyBlock = allArray[this.id] + ", ";
                 document.getElementById('block').innerHTML = `<img src="${allImage[this.id]}"/>`;
             }
-            finalAssembly = assemblyCorp + assemblyProc + assemblyCart + assemblySSD + assemblyHDD + assemblyPlat;
-            sum = corpPrice + procPrice + cartPrice + ssdPrice + hddPrice + platPrice;
-            document.getElementById('allComponents').innerHTML = finalAssembly;
+            console.log(finalAssembly);
+            finalAssembly = assemblyCorp + assemblyProc + assemblyCart + assemblySSD + assemblyHDD + assemblyPlat + assemblyBlock;
+            sum = corpPrice + procPrice + cartPrice + ssdPrice + hddPrice + platPrice + blockPrice;
+            // document.getElementById('allComponents').innerHTML = finalAssembly;
             document.getElementById('allPrice').innerHTML = `${sum}₽`;
             console.log(assemblyCorp, assemblyProc, corpPrice, procPrice, cartPrice, ssdPrice, hddPrice, platPrice);
             console.log("Финальная сборка - ", finalAssembly);
@@ -238,7 +239,13 @@ function themeChange() {
 
 function money() {
     const youMoney = document.getElementById("youMoney").value;
+    const resultMoney = document.getElementById("allMoney");
     document.getElementById("allMoney").innerHTML = `${youMoney}/${sum}`;
+    if (sum > youMoney) {
+        resultMoney.style.color = 'red';
+    } else {
+        resultMoney.style.color = '#007bff';
+    }
 }
 
 main();

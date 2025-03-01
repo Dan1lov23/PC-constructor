@@ -114,6 +114,32 @@ body {
     text-align: center;
 }
 
+.result2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(625px, 1fr));
+    gap: 60px;
+    margin-top: 50px;
+}
+
+.resultComponent2 {
+    text-align: center;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.result2 img {
+    border-radius: 15px;
+    width: 215px;
+    height: 200px;
+}
+
+.result2 i {
+    font-size: 200px;
+    text-align: center;
+}
+
 .themeChange {
     text-align: right;
     margin-top: 20px;
@@ -138,4 +164,16 @@ body {
     text-align: center;
     font-size: 35px;
     color: #007bff;
+}
+
+.finalAssembly {
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 65px;
+    color: #007bff;
+}
+
+.allMoney {
+    text-align: center;
+    font-size: 65px;
 }
