@@ -167,9 +167,10 @@ body {
 }
 
 .finalAssembly {
+    margin-top: 20px;
     font-family: sans-serif;
     text-align: center;
-    font-size: 65px;
+    font-size: 35px;
     color: #007bff;
 }
 
