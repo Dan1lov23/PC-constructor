@@ -206,13 +206,9 @@ function main() {
                 assemblyBlock = allArray[this.id] + ", ";
                 document.getElementById('block').innerHTML = `<img src="${allImage[this.id]}"/>`;
             }
-            console.log(finalAssembly);
             finalAssembly = assemblyCorp + assemblyProc + assemblyCart + assemblySSD + assemblyHDD + assemblyPlat + assemblyBlock;
             sum = corpPrice + procPrice + cartPrice + ssdPrice + hddPrice + platPrice + blockPrice;
-            // document.getElementById('allComponents').innerHTML = finalAssembly;
             document.getElementById('allPrice').innerHTML = `${sum}₽`;
-            console.log(assemblyCorp, assemblyProc, corpPrice, procPrice, cartPrice, ssdPrice, hddPrice, platPrice);
-            console.log("Финальная сборка - ", finalAssembly);
             money();
         });
     });
@@ -240,7 +236,7 @@ function themeChange() {
 function money() {
     const youMoney = document.getElementById("youMoney").value;
     const resultMoney = document.getElementById("allMoney");
-    document.getElementById("allMoney").innerHTML = `${youMoney}/${sum}`;
+    document.getElementById("allMoney").innerHTML = `${youMoney}/${sum} ₽`;
     if (sum > youMoney) {
         resultMoney.style.color = 'red';
     } else {
